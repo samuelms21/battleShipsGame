@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Battleships</title>
+  </head>
+  <body>
+    <div class="flex-container">
+      <section id="won-the-set">
+        <h1>Player has won the set!</h1>
+        <p>Points</p>
+        <p>0 - 0</p>
+        <button id="setButton" class="endButton">Continue</button>
+      </section>
+      <section id="won-the-game">
+        <h1>Player has won the game!</h1>
+        <h3>Congratulations!</h3>
+        <br />
+        <p>Set Score</p>
+        <p>0 - 0</p>
+        <button id="gameButton" class="endButton">Reset Game</button>
+      </section>
+      <section id="overlay"></section>
+      <section id="settings">
+        <h1>User Settings</h1>
+        <form>
+          <section id="board-size-option">
+            <label for="boardSizeInput">Select a board size:</label>
+            <br />
+            <input
+              type="number"
+              name="size"
+              id="boardSizeInput"
+              placeholder="Select a number from 5 to 13"
+              min="5"
+              max="13"
+              step="2"
+            />
+          </section>
+          <section id="amount-of-ships">
+            <label for="shipAmountInput"
+              >Select the amount of ships you want to play with:</label
+            >
+            <br />
+            <input
+              type="number"
+              id="shipAmountInput"
+              min="1"
+              max="11"
+              step="2"
+              placeholder="Select a number from 1 to 11"
+            />
+          </section>
+          <section id="num-of-sets">
+            <p>How many sets would you like to play?</p>
+            <input type="radio" name="numSets" id="1-set" value="1" />
+            <label for="1-set">1</label>
+            <input type="radio" name="numSets" id="3-sets" value="3" />
+            <label for="3-sets">3</label>
+            <input type="radio" name="numSets" id="5-sets" value="5" />
+            <label for="5-sets">5</label>
+            <input type="radio" name="numSets" id="7-sets" value="3" />
+            <label for="7-sets">7</label>
+          </section>
+          <button id="saveSettings">Save</button>
+        </form>
+
+        <section id="guide">
+          <h1>Battleships Guide</h1>
+          <ul>
+            <li>> Choose from a 5x5 to a 13x13-sized grid.</li>
+            <li>
+              > Each grid has its own ship length:
+              <ul>
+                <li><pre>  + 5x5 : 1</pre></li>
+                <li><pre>  + 7x7, 9x9 : 2</pre></li>
+                <li><pre>  + 11x11, 13x13 : 3</pre></li>
+              </ul>
+            </li>
+            <li>> You have to type in the grid location to fire.</li>
+            <li>> May the best player win!</li>
+          </ul>
+        </section>
+      </section>
+      <section id="board">
+        <table id="tableBoard">
+          <th>BATTLESHIPS BOARD</th>
+        </table>
+        <div id="playerControls" class="flex-container">
+          <form id="playerOneForm">
+            <p>Player 1</p>
+            <input
+              type="text"
+              name="playerOneInput"
+              id="playerOneInput"
+              placeholder="Select a cell"
+            />
+            <button id="playerOneBtn" class="fireButton">Fire</button>
+          </form>
+          <form id="playerTwoForm">
+            <p>Player 2</p>
+            <input
+              type="text"
+              name="playerTwoInput"
+              id="playerTwoInput"
+              placeholder="Select a cell"
+            />
+            <button id="playerTwoBtn" class="fireButton">Fire</button>
+          </form>
+        </div>
+      </section>
+      <section id="gameScore">
+        <br />
+        <br />
+        <h1>Set Score</h1>
+        <section id="totalSets" class="flex-container">
+          <div id="playerOneSetScore">
+            <h4>Player 1</h4>
+            <h2>0</h2>
+          </div>
+          <div id="playerTwoSetScore">
+            <h4>Player 2</h4>
+            <h2>0</h2>
+          </div>
+        </section>
+        <br />
+        <h1>Current Points</h1>
+        <section id="currentSetScores">
+          <div class="card flex-container">
+            <h3 id="playerOneLabelScore">Player 1</h3>
+            <p id="playerOneCurrentScore">0</p>
+          </div>
+          <div class="card flex-container">
+            <h3 id="playerTwoLabelScore">Player 2</h3>
+            <p id="playerTwoCurrentScore">0</p>
+          </div>
+        </section>
+        <br />
+        <h3>Ships Sunk</h3>
+        <section id="shipsSunk">
+          <div class="sunkCard">
+            <p id="playerOneShipsSunk">Player 1 : 0</p>
+          </div>
+          <div class="sunkCard">
+            <p id="playerTwoShipsSunk">Player 2 : 0</p>
+          </div>
+        </section>
+      </section>
+    </div>
+    <script src="./tugas-2-battleship.js"></script>
+  </body>
+</html>
